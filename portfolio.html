@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full Portfolio | MyPortfolio</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+
+    <!-- HEADER -->
+    <header class="bg-[radial-gradient(circle_at_top,_#1e3a8a,_#020617)] text-white">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">MyPortfolio</h1>
+            <a href="index.html" class="btn-outline">Back Home</a>
+        </div>
+    </header>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="py-24 px-6 bg-gray-50 dark:bg-gray-800">
+
+        <!-- Section Heading -->
+        <div class="text-center mb-14">
+            <h2 class="text-4xl font-bold">My Portfolio</h2>
+            <span class="block w-12 h-1 bg-orange-500 mx-auto mt-3 rounded-full"></span>
+            <p class="mt-4 text-gray-600 dark:text-gray-300">
+                A selection of our recent frontend projects and designs
+            </p>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+            <!-- CARD 1 -->
+            <div class="portfolio-card">
+                <div class="h-56 overflow-hidden">
+                    <img src="/asset/unsplash_FO7kUmBYVi0.png" class="h-full w-full object-cover" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-2">Business Website</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Corporate website with modern UI and responsive layout.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="portfolio-card">
+                <div class="h-56 overflow-hidden">
+                    <img src="/asset/unsplash_FO7kUmBYVi0.png" class="h-full w-full object-cover" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-2">E-commerce Store</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Online store UI with product listing and cart experience.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="portfolio-card">
+                <div class="h-56 overflow-hidden">
+                    <img src="/asset/unsplash_FO7kUmBYVi0.png" class="h-full w-full object-cover" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-2">Landing Page</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        High-converting landing page for startups.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="portfolio-card">
+                <div class="h-56 overflow-hidden">
+                    <img src="/asset/unsplash_FO7kUmBYVi0.png" class="h-full w-full object-cover" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-2">Dashboard UI</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Admin dashboard with analytics and data tables.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="portfolio-card">
+                <div class="h-56 overflow-hidden">
+                    <img src="/asset/unsplash_FO7kUmBYVi0.png" class="h-full w-full object-cover" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-2">Blog Platform</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Clean blog UI optimized for readability and SEO.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="portfolio-card">
+                <div class="h-56 overflow-hidden">
+                    <img src="/asset/unsplash_FO7kUmBYVi0.png" class="h-full w-full object-cover" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-2">Portfolio Website</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Personal portfolio showcasing projects and skills.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 7 -->
+            <div class="portfolio-card">
+                <div class="h-56 overflow-hidden">
+                    <img src="/asset/unsplash_FO7kUmBYVi0.png" class="h-full w-full object-cover" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-2">Restaurant Website</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Menu-driven website with online reservation UI.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 8 -->
+            <div class="portfolio-card">
+                <div class="h-56 overflow-hidden">
+                    <img src="/asset/unsplash_FO7kUmBYVi0.png" class="h-full w-full object-cover" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-2">Event Page</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Event landing page with schedule and speakers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 9 -->
+            <div class="portfolio-card">
+                <div class="h-56 overflow-hidden">
+                    <img src="/asset/unsplash_FO7kUmBYVi0.png" class="h-full w-full object-cover" />
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-2">SaaS Website</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                        SaaS marketing site with pricing and onboarding UI.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 text-center text-gray-500">
+        © 2025 MyPortfolio
+    </footer>
+
+</body>
+</html>
