@@ -147,3 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
   
+// Debugger
+fetch("https://portfolio-backend-uhk4.onrender.com/api/ping", {
+  method: "POST",
+})
+  .then(res => res.json())
+  .then(data => console.log("PING RESPONSE:", data))
+  .catch(err => console.error("PING ERROR:", err));
