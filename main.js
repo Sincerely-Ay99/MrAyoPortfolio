@@ -1,3 +1,6 @@
+alert("THIS IS THE ACTIVE main.js FILE");
+
+
 lucide.createIcons();
 
 /* ================= MOBILE NAV ================= */
@@ -8,8 +11,6 @@ function toggleMenu() {
   mobileMenu.classList.toggle('hidden');
 }
 menuBtn.addEventListener('click', toggleMenu);
-
-/* ================= DARK MODE ================= */
 
 
 /* ================= FAQ SMOOTH ACCORDION ================= */
@@ -88,44 +89,45 @@ createParticles();
 animateParticles();
 
 /* ================= EMAILJS + FORM VALIDATION ================= */
-emailjs.init("YOUR_PUBLIC_KEY");
-
-document.getElementById('contactForm').addEventListener('submit', function (e) {
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  console.log("Form submit triggered");
   e.preventDefault();
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const error = document.getElementById('formError');
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const error = document.getElementById("formError");
 
-  if (!name || !email.includes('@') || !message) {
-    error.classList.remove('hidden');
+  if (!name || !email.includes("@") || !message) {
+    error.classList.remove("hidden");
     return;
   }
 
-  error.classList.add('hidden');
+  error.classList.add("hidden");
 
-  emailjs.send(
-    "YOUR_SERVICE_ID",
-    "YOUR_TEMPLATE_ID",
-    {
-      from_name: name,
-      from_email: email,
-      message: message
-    }
-  )
-  .then(() => {
+  try {
+    const res = await fetch("https://portfolio-backend-uhk4.onrender.com/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    if (!res.ok) throw new Error();
+
     alert("Message sent successfully!");
-    this.reset();
-  })
-  .catch(() => {
+    e.target.reset();
+
+  } catch {
     alert("Failed to send message. Please try again.");
-  });
+  }
 });
 
+/* ================= DARK MODE ================= */
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("themeToggle");
   const html = document.documentElement;
+
+  if (!toggleBtn) return;
 
   // Load saved theme
   const savedTheme = localStorage.getItem("theme");
@@ -136,7 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleBtn.addEventListener("click", () => {
     html.classList.toggle("dark");
 
-    // Save preference
     if (html.classList.contains("dark")) {
       localStorage.setItem("theme", "dark");
     } else {
@@ -144,20 +145,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-const slider = document.getElementById("reviewSlider");
 
-if (slider) {
-  let index = 0;
-  const cardWidth = 344; // card width + gap
-  const visibleCards = 3;
-
-  setInterval(() => {
-    index++;
-
-    if (index > slider.children.length - visibleCards) {
-      index = 0;
-    }
-
-    slider.style.transform = `translateX(-${index * cardWidth}px)`;
-  }, 3000);
-}
+  
